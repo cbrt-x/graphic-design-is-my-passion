@@ -1,0 +1,83 @@
+html {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui;
+    background: conic-gradient(
+       #00ff00,
+       #00ffff,
+       #0000ff,
+       #ff00ff,
+       #ff0000,
+       #ffff00
+    ) no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.moving-text > * {
+    box-shadow: 6px 6px 3px white;
+    border-radius: 100vh;
+    padding: 10px;
+    border: 3px solid black;
+}
+
+img, p {
+    background: conic-gradient(red, yellow, lime, aqua, violet, red);
+}
+
+p {
+    font-size: 5vmax;
+    margin: 0;
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: dashed underline;
+    text-shadow:
+      3px 3px 2px lightblue,
+      -3px -3px 2px violet;
+    position: absolute;
+    display: block;
+    animation: 
+      2s ease-in-out move-x-axis infinite alternate,
+      3s ease-in-out move-y-axis infinite alternate,
+      2s ease-in-out text-color infinite alternate-reverse;
+    text-wrap: nowrap;
+
+}
+
+.moving-text {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+@keyframes text-color {
+    from {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}
+
+@keyframes move-y-axis {
+    from { 
+      transform: translateY(-40vh);
+    } to { 
+      transform: translateY(40vh);
+    }
+}
+
+@keyframes move-x-axis {
+    from {
+      translate: -40vw 0;
+    } to {
+      translate: 40vw 0;
+    }
+}
